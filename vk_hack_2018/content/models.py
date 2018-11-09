@@ -25,9 +25,8 @@ class Event(models.Model):
         max_length=250,
     )
 
-    description = models.CharField(
+    description = models.TextField(
         verbose_name='description of an event',
-        max_length=2000,
     )
 
     date = models.DateTimeField(
@@ -53,9 +52,8 @@ class News(models.Model):
         verbose_name='news id',
     )
 
-    content = models.CharField(
+    content = models.TextField(
         verbose_name='content of news',
-        max_length=1000,
     )
 
     date = models.DateTimeField(
