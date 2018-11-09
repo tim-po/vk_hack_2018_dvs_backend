@@ -5,22 +5,13 @@ from rest_framework import serializers
 class PhotoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Photo
-        fields = (
-            "image"
-        )
+        fields = '__all__'
 
 
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-        fields = (
-            "id",
-            "name",
-            "description",
-            "date",
-            "photo",
-            "link"
-        )
+        fields = '__all__'
 
 
 class NewsSerializer(serializers.ModelSerializer):
@@ -28,9 +19,4 @@ class NewsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = News
-        fields = (
-            "id",
-            "content",
-            "date",
-            "photos"
-        )
+        fields = '__all__'
