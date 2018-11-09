@@ -76,6 +76,11 @@ class News(models.Model):
         verbose_name='news id',
     )
 
+    name = models.CharField(
+        max_length=100,
+        blank=True
+    )
+
     content = models.TextField(
         verbose_name='content of news',
     )
