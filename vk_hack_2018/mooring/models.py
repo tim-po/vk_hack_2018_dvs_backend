@@ -17,7 +17,7 @@ class TimePeriod(models.Model):
     )
 
     def __str__(self):
-        return '{}  -  {}'.format(self.time_from, self.time_to)
+        return '{}  -  {}'.format(str(self.time_from)[:-9], str(self.time_to)[:-9])
 
 
 class MooringPlace(models.Model):
