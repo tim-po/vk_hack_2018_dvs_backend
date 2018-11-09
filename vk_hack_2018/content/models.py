@@ -41,7 +41,7 @@ class Event(models.Model):
     )
 
     name = models.CharField(
-        verbose_name='place name',
+        verbose_name='event name',
         max_length=250,
     )
 
@@ -97,4 +97,4 @@ class News(models.Model):
     )
 
     def __str__(self):
-        return 'news from {}'.format(self.date)
+        return 'news from {}'.format(str(self.date)[:-12])
