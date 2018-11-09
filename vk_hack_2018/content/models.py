@@ -30,6 +30,7 @@ class Photo(models.Model):
 
     image = models.ImageField(
         verbose_name='image',
+        upload_to="gallery",
     )
 
 
@@ -56,6 +57,7 @@ class Event(models.Model):
     )
     photo = models.ImageField(
         verbose_name='image of an event',
+        upload_to="gallery",
     )
 
     link = models.CharField(
