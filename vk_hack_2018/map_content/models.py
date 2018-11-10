@@ -9,12 +9,11 @@ class Place(models.Model):
 
     name = models.CharField(
         verbose_name='place name',
-        max_length=250,
+        max_length=50,
     )
 
-    description = models.CharField(
+    description = models.TextField(
         verbose_name='description of a place',
-        max_length=1000,
     )
 
     category = models.CharField(
