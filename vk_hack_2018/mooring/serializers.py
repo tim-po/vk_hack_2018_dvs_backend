@@ -1,19 +1,20 @@
-from .models import TimePeriod, MooringPlace
+from .models import Reservation, MooringPlace
 
 from rest_framework import serializers
 
 
-class TimePeriodSerializer(serializers.ModelSerializer):
+class ReservationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = TimePeriod
+        model = Reservation
         fields = (
+            'boat_name',
             'time_from',
             'time_to'
         )
 
 
 class MooringPlaceSerializer(serializers.ModelSerializer):
-    time_table = TimePeriodSerializer(read_only=True, many=True)
+    reservations = ReservationSerializer(read_only=True, many=True)
 
     class Meta:
         model = MooringPlace

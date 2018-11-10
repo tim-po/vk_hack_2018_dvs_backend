@@ -3,9 +3,8 @@ from .models import *
 
 
 class MooringPlaceAdmin(admin.ModelAdmin):
-    filter_horizontal = ['time_table']
+    filter_horizontal = ['reservations']
 
 
 admin.site.register(MooringPlace, MooringPlaceAdmin)
-admin.site.register(TimePeriod)
-# Register your models here.
+admin.site.register(Reservation)

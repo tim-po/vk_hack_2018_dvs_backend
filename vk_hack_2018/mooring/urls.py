@@ -4,5 +4,5 @@ from .views import MooringPlaceInfo
 
 
 urlpatterns = [
-    url(r'$', MooringPlaceInfo.as_view())
+    url(r'mooring_places/$', MooringPlaceInfo.as_view())
 ]

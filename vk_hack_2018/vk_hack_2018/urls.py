@@ -22,9 +22,10 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^', include('mooring.urls')),
     url(r'^', include('content.urls')),
     url(r'^', include('map_content.urls')),
-    url(r'^mooring_places/', include('mooring.urls')),
+
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class TimePeriod(models.Model):
+class Reservation(models.Model):
     # class used in many-to-many relations of a mooring place
     id = models.AutoField(
         primary_key=True,
@@ -16,6 +16,11 @@ class TimePeriod(models.Model):
         verbose_name='time when the place will be released'
     )
 
+    boat_name = models.CharField(
+        max_length=100,
+        verbose_name="name of boat"
+    )
+
     def __str__(self):
         return '{}  -  {}'.format(str(self.time_from)[:-9], str(self.time_to)[:-9])
 
@@ -26,8 +31,8 @@ class MooringPlace(models.Model):
         verbose_name='mooring place id',
     )
 
-    time_table = models.ManyToManyField(
-        TimePeriod,
+    reservations = models.ManyToManyField(
+        Reservation,
         verbose_name='time table for a mooring place'
     )
 
